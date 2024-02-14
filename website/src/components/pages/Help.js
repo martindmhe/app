@@ -1,8 +1,13 @@
 import React from 'react'
+import Helpcard from '../../Helpcard'
 
 function Help() {
   return (
-    <div>Help</div>
+    <>
+    <div className='page'>
+        <Helpcard />
+    </div>
+    </>
   )
 }
 

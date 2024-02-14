@@ -1,8 +1,9 @@
 import React from 'react'
+import Choices from '../../Choices'
 
 function Generate() {
   return (
-    <div>Generate</div>
+    <div className="generate"><Choices /></div>
   )
 }
 
