@@ -5,3 +5,11 @@ GET http://127.0.0.1:3000/test-openai/
 ###
 
 GET http://127.0.0.1:3000/
+
+###
+
+GET http://127.0.0.1:3000/profile
+
+###
+
+GET http://127.0.0.1:3000/login
