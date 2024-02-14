@@ -2,9 +2,46 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body{
-  background-color: bisque;
+  background: linear-gradient(90deg, #ffe3ee, #dff6ff);
 
+}
+
+h1{
+  font-family: 'Main';
+  font-size: 2.5em;
+  color: #8a6475;
+}
+
+.page{
+  background: linear-gradient(90deg, #ffe3ee, #dff6ff);
+  position: absolute;
+  left: 20vw;
+  width: 80vw;
+}
+
+.generate{
+  background: linear-gradient(90deg, #ffe3ee, #dff6ff);
+  position: absolute;
+  left: 20vw;
+  width: 80vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "Main";   /*Can be any text*/
+  src: url("./fonts/Heavitas.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Body";   /*Can be any text*/
+  src: url("./fonts/body.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Body_bold";   /*Can be any text*/
+  src: url("./fonts/body_bold.ttf") format("truetype");
 }
