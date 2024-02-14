@@ -1,9 +1,9 @@
 import React from 'react'
 import "../../App.css"
-
+import Uploadpage from '../Uploadpage'
 function Upload() {
   return (
-    <div className='page'>Upload</div>
+    <div className="generate"><Uploadpage /></div>
   )
 }
 

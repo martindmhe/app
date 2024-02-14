@@ -105,7 +105,7 @@
   }
   
   .search button[type="submit"]:hover {
-    transform: scale(0.9);
+    transform: scale(0.8);
     color: #546a98;
     background-color: #89acca;
   }
@@ -113,35 +113,22 @@
   .output{
     width: 60vw;
     height: 60vh;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 25px;
     font-family: "Body_bold";
   }
 
-  .inputMessage{
-    margin: 2em;
-    text-align: left;
-    width: 40vw;
-    display: flex;
-    background-color: #cdd6e0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-
   .generatedMessage{
-    margin: 2em;
+    
     text-align: left;
     width: 40vw;
     display: flex;
-    background-color: #c7e6cd;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
   }
 
   .output p{
-    margin: 10px;
+    margin: 1em;
     flex-wrap: wrap;
     flex: 1;
   }
@@ -151,4 +138,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .speaker2{
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+  }
+
+  .speaker1{
+    margin-top: 0.6em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .speakericons{
+    height: 50px;
+    margin: 10px 20px 20px;
+  }
+
+  .speakericons{
+    height: 50px;
   }

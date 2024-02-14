@@ -9,7 +9,7 @@ function Helpcard() {
         <br></br>
         <h1>Uploading Message Data</h1>
         <div class="card">
-          <img src="https://i.imgur.com/NdnYSfm.png"></img>
+          <img src="https://i.imgur.com/NdnYSfm.png" alt="Choose your activity"></img>
           <div class="card__content">
             <p class="card__title">Your Activity</p>
             <p class="card__description">
@@ -20,7 +20,7 @@ function Helpcard() {
           </div>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/oFZulB1.png"></img>
+          <img src="https://i.imgur.com/oFZulB1.png" alt="Download your information"></img>
           <div class="card__content">
             <p class="card__title">Download Information</p>
             <p class="card__description">
@@ -30,7 +30,7 @@ function Helpcard() {
         </div>
 
         <div class="card">
-          <img src="https://i.imgur.com/eCkzmeR.png"></img>
+          <img src="https://i.imgur.com/eCkzmeR.png" alt="Request a download"></img>
           <div class="card__content">
             <p class="card__title">Request a Download</p>
             <p class="card__description">
@@ -41,7 +41,7 @@ function Helpcard() {
         </div>
 
         <div class="card">
-          <img src="https://i.imgur.com/4s5FJJ0.png"></img>
+          <img src="https://i.imgur.com/4s5FJJ0.png" alt="Select your download options"></img>
           <div class="card__content">
             <p class="card__title">Download Options</p>
             <p class="card__description">
@@ -52,7 +52,7 @@ function Helpcard() {
         </div>
 
         <div class="card">
-          <img src="https://i.imgur.com/a1jOegj.png"></img>
+          <img src="https://i.imgur.com/a1jOegj.png" alt="Export your data"></img>
           <div class="card__content">
             <p class="card__title">Export Data</p>
             <p class="card__description">

@@ -6,6 +6,7 @@ import {
   faFaceGrinStars,
   faFaceSadTear,
   faFaceSmile,
+  faFaceKissWinkHeart
 } from "@fortawesome/free-solid-svg-icons";
 
 function Choices() {
@@ -55,17 +56,24 @@ const getInput = e => {
       </div>
       <br></br>
       <div className ="output">
-        <div className="inputMessage" style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
-        {inputText == "" ? <p>Enter the text you are responding to...</p>: <p>{inputText}</p>}
+        <br></br>
+        <div className="speaker1">
+        <FontAwesomeIcon className="speakericons" style={{marginLeft: '30px', color: "#637882"}} icon={faFaceKissWinkHeart} />
+        <div className="generatedMessage" style={{backgroundColor: '#cdd6e0', whiteSpace: 'pre-wrap', overflowWrap: 'break-word', borderBottomRightRadius: '20px'}}>
+        {inputText === "" ? <p>Enter the text you are responding to...</p>: <p>{inputText}</p>}
         </div>
-        <div className="generatedMessage" style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
+        </div>
+
+        <div className="speaker2">
+        <div className="generatedMessage" style={{backgroundColor: '#ebd5e7', whiteSpace: 'pre-wrap', overflowWrap: 'break-word', borderBottomLeftRadius: '20px'}}>
             <p>Generating...</p> 
         </div>
 
-        {selectedOption == "Neutral" && <FontAwesomeIcon icon={faFaceMeh} />}
-        {selectedOption == "Professional" && <FontAwesomeIcon icon={faFaceSmile} />}
-        {selectedOption == "Excited" && <FontAwesomeIcon icon={faFaceGrinStars} />}
-        {selectedOption == "Apologetic" && <FontAwesomeIcon icon={faFaceSadTear} />}
+        {selectedOption === "Neutral" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceMeh} />}
+        {selectedOption === "Professional" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceSmile} />}
+        {selectedOption === "Excited" && <FontAwesomeIcon className="speakericons"  style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceGrinStars} />}
+        {selectedOption === "Apologetic" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceSadTear} />}
+        </div>
 
       </div>
 

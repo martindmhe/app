@@ -1,5 +1,5 @@
 import React from 'react'
-import Helpcard from '../../Helpcard'
+import Helpcard from '../Helpcard'
 
 function Help() {
   return (
