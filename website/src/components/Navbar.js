@@ -1,9 +1,9 @@
-import "./Nav.css";
+import "./Navbar.css";
 import "../App.css";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-function Nav() {
+function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMenu = () => {
@@ -30,48 +30,26 @@ function Nav() {
       <nav className="nav">
         <div className="nav-container">
           <Link to="/" className="nav-logo" onClick={closeMenu}>
-            Aurora Shi
+            Name
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li
-              className="nav-item"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.replace("/#home");
-              }}
-            >
+          <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMenu}>
                 Home
               </Link>
             </li>
-            <li
-              className="nav-item"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.replace("/#about");
-              }}
-            >
-              <Link className="nav-links" onClick={closeMenu}>
-                About
+            <li className="nav-item">
+              <Link  to="/generate" className="nav-links" onClick={closeMenu}>
+                Generate
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/portfolio" className="nav-links" onClick={closeMenu}>
-                Portfolio
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/works" className="nav-links" onClick={closeMenu}>
-                Projects
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/contact" className="nav-links" onClick={closeMenu}>
-                Contact
+              <Link to="/help" className="nav-links" onClick={closeMenu}>
+                Help
               </Link>
             </li>
           </ul>
@@ -81,4 +59,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navbar;
