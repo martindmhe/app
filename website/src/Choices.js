@@ -1,5 +1,12 @@
 import React, {useState} from "react";
 import "./Choices.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFaceMeh,
+  faFaceGrinStars,
+  faFaceSadTear,
+  faFaceSmile,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Choices() {
 const [selectedOption, setSelectedOption] = useState("Neutral")  
@@ -15,7 +22,7 @@ const getInput = e => {
     <>
     <div className="Choice_container">
     <div class="search">
-        <input placeholder="Enter the message you are responding to..." type="text" onChange={getInput}></input>
+        <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
         <button type="submit">Go</button>
       </div>
 
@@ -49,12 +56,17 @@ const getInput = e => {
       <br></br>
       <div className ="output">
         <div className="inputMessage" style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
-            <p>{inputText}</p>
+        {inputText == "" ? <p>Enter the text you are responding to...</p>: <p>{inputText}</p>}
+        </div>
+        <div className="generatedMessage" style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
+            <p>Generating...</p> 
         </div>
 
-        <div className="generatedMessage" style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
-            <p>Generating...</p>
-        </div>
+        {selectedOption == "Neutral" && <FontAwesomeIcon icon={faFaceMeh} />}
+        {selectedOption == "Professional" && <FontAwesomeIcon icon={faFaceSmile} />}
+        {selectedOption == "Excited" && <FontAwesomeIcon icon={faFaceGrinStars} />}
+        {selectedOption == "Apologetic" && <FontAwesomeIcon icon={faFaceSadTear} />}
+
       </div>
 
       
