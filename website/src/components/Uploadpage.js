@@ -43,6 +43,7 @@ function Uploadpage() {
   return (
     <>
       <div className="upload-container">
+        <h3>Please visit the help page for upload instructions!</h3>
         <label class="custum-file-upload" for="file">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
@@ -64,18 +65,11 @@ function Uploadpage() {
             </svg>
           </div>
           <div class="text">
-            <span>Click to upload your message data</span>
+            {uploadedFile? <span>{uploadedFile}</span> : <span>Click to upload your message data</span>}
           </div>
-          <input type="file" id="file"></input>
+          <input type="file" id="file" accept=".json" onChange={handleFileChange}></input>
         </label>
-
-        <input
-          type="file"
-          id="json-upload"
-          accept=".json"
-          onChange={handleFileChange}
-        />
-        <button onClick={handleUpload}>Submit File</button>
+        <button onClick={handleUpload} >Submit File</button>
       </div>
     </>
   );
