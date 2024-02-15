@@ -68,6 +68,12 @@ app.get('/test-openai/', (req, res) => {
     res.send(completedText)
 })
 
+app.post('/upload-messages/', (req, res) => {
+  const body = req.body;
+  console.log(body)
+  res.send(body)
+})
+
 
 app.listen(PORT, () => {
     console.log("Server running on port: " + PORT);
