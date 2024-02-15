@@ -12,6 +12,8 @@ import {
 function Choices() {
 const [selectedOption, setSelectedOption] = useState("Neutral")  
 const [inputText, setInputText] = useState("No Input")  
+const [generatedMessage, setGeneratedMessage] = useState("")
+
 const onValueChange = e => {
     setSelectedOption(e.target.value)
 }
@@ -19,12 +21,19 @@ const onValueChange = e => {
 const getInput = e => {
     setInputText(e.target.value)
 }
+
+const generateMessage = () => {
+  fetch('http://127.0.0.1:3000/test-openai/')
+  .then((res => res.text()))
+  .then(data => setGeneratedMessage(data))
+}
+
   return (
     <>
     <div className="Choice_container">
     <div class="search">
         <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
-        <button type="submit">Go</button>
+        <button type="submit" onClick={generateMessage}>Go</button>
       </div>
 
 
@@ -66,7 +75,7 @@ const getInput = e => {
 
         <div className="speaker2">
         <div className="generatedMessage" style={{backgroundColor: '#ebd5e7', whiteSpace: 'pre-wrap', overflowWrap: 'break-word', borderBottomLeftRadius: '20px'}}>
-            <p>Generating...</p> 
+            <p>{generatedMessage}</p> 
         </div>
 
         {selectedOption === "Neutral" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceMeh} />}
