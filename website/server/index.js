@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {
@@ -67,6 +67,12 @@ app.get('/test-openai/', (req, res) => {
 
     // console.log(completedText)
     // res.send(completedText)
+})
+
+app.post('/upload-messages/', (req, res) => {
+  const body = req.body;
+  console.log(body)
+  res.send(body)
 })
 
 
