@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {
@@ -59,8 +59,9 @@ app.get('/profile', requiresAuth(), (req, res) => {
 let testPrompt = "What chatgpt model am i using?"
 
 app.get('/test-openai/', (req, res) => {
-    console.log('working')
-    textComplete(testPrompt).then(result => {
+    const query = req.query.query;
+    console.log(query)
+    textComplete(query).then(result => {
         res.send(result)
     })
 
