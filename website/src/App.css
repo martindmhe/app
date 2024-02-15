@@ -33,7 +33,7 @@ h1{
 
 @font-face {
   font-family: "Main";   /*Can be any text*/
-  src: url("./fonts/Heavitas.ttf") format("truetype");
+  src: url("./fonts/Heavitas.otf") format("truetype");
 }
 
 @font-face {
