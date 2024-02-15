@@ -58,8 +58,9 @@ app.get('/profile', requiresAuth(), (req, res) => {
 let testPrompt = "Whats your fav animal?"
 
 app.get('/test-openai/', (req, res) => {
-    console.log('working')
-    textComplete(testPrompt).then(result => {
+    const query = req.query.query;
+    console.log(query)
+    textComplete(query).then(result => {
         res.send(result)
     })
 
