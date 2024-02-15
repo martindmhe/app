@@ -1,8 +1,9 @@
 import React from 'react'
+import Homepage from '../Homepage'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className="generate"><Homepage /></div>
   )
 }
 

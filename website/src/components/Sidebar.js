@@ -1,5 +1,5 @@
 // Sidebar.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css"; // Make sure to create a corresponding CSS file
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +8,11 @@ import {
   faQuestion,
   faUpload,
   faComment,
+  faArrowRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
+  const [loggedin, setloggedin] = useState(true);
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
@@ -41,6 +43,19 @@ const Sidebar = () => {
             Help
           </div>
         </Link>
+        {loggedin ? (
+          <>
+            {" "}
+            <div className="nav-links">
+            <div style={{color: "#a12349"}} className="nav-item">
+              <FontAwesomeIcon className="icons" style={{color: "#a12349"}}icon={faArrowRightFromBracket} />
+              Log out
+            </div>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
         {/* Add more navigation items here */}
       </ul>
     </div>

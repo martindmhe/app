@@ -1,0 +1,102 @@
+.form-container {
+    width: 320px;
+    border-radius: 0.75rem;
+    background-color: rgb(184, 141, 167);
+    padding: 2rem;
+    color: rgb(81, 50, 66);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Body';
+  }
+
+  .form-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Body_bold";
+  }
+  
+  .form {
+    margin-top: 1.5rem;
+  }
+  
+  .input-group {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: rgb(106, 55, 86);
+    margin-bottom: 4px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    border-radius: 1.4rem;
+    border: 2px solid rgb(133, 80, 113);
+    outline: 0;
+    background-color: rgb(255, 255, 255);
+    padding: 0.75rem 1rem;
+    color: rgb(89, 54, 79);
+  }
+  
+  .input-group input:focus {
+    border-color: rgb(132, 177, 213);
+    background-color: rgb(218, 236, 247);
+  }
+  
+  .forgot {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(100, 64, 86);
+    margin: 8px 0 14px 0;
+  }
+  
+  .forgot a,.signup a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot a:hover, .signup a:hover {
+    text-decoration: underline rgb(133, 80, 113);
+  }
+  
+  .sign {
+    display: block;
+    width: 100%;
+    background-color: rgb(136, 87, 117);
+    border: 2px solid rgb(112, 56, 90);
+    padding: 0.75rem;
+    text-align: center;
+    color: rgb(230, 187, 225);
+    border-radius: 1.5rem;
+  }
+
+  .sign:hover{
+    background-color: rgb(151, 100, 132);
+    border: 2px solid rgb(141, 70, 113);
+  }
+  
+  .signup {
+    margin:1em;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(135, 72, 98);
+  }
+  
+  .login-container{
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

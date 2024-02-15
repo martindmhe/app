@@ -23,7 +23,8 @@ const getInput = e => {
 }
 
 const generateMessage = (inputText) => {
-  fetch(`http://127.0.0.1:3000/test-openai?query=${encodeURIComponent(inputText)}`)
+  let temp = `How should I respond to ${inputText}`
+  fetch(`http://127.0.0.1:3000/test-openai?query=${encodeURIComponent(temp)}`)
   .then(res => res.text())
   .then(data => setGeneratedMessage(data))
 }
