@@ -22,11 +22,21 @@ const getInput = e => {
     setInputText(e.target.value)
 }
 
+function createMessageInformation(prompt, tone) {
+
+  return { prompt, tone };
+}
+
 const generateMessage = (inputText) => {
-  let temp = `How should I respond to ${inputText}`
-  fetch(`http://127.0.0.1:3000/test-openai?query=${encodeURIComponent(temp)}`)
+
+  const testTone = "Joyful";
+  // const messageInformation = createMessageInformation(inputText, testTone);
+  // const messageInformationString = messageInformation.toString();
+  // let temp = `How should I respond to ${inputText}`
+  fetch(`http://127.0.0.1:3000/test-openai?data=${encodeURIComponent(JSON.stringify({message: inputText, tone: testTone}))}`)
   .then(res => res.text())
   .then(data => setGeneratedMessage(data))
+  .catch(error => console.log(error))
 }
 
   return (
@@ -34,7 +44,7 @@ const generateMessage = (inputText) => {
     <div className="Choice_container">
     <div className="search">
         <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
-        <button type="submit" onClick={generateMessage}>Go</button>
+        <button type="submit" onClick={() => generateMessage(inputText)}>Go</button>
       </div>
 
 

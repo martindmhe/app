@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {
@@ -57,15 +57,20 @@ app.get('/profile', requiresAuth(), (req, res) => {
 
 let testPrompt = "Whats your fav animal?"
 
-app.get('/test-openai/', (req, res) => {
-    const query = req.query.query;
-    console.log(query)
-    textComplete(query).then(result => {
+app.get('/test-openai', (req, res) => {
+    const data = JSON.parse(decodeURIComponent(req.query.data));
+    console.log(data);
+    const { message, tone } = data;
+    
+    const prompt = `Write a response to the message: ${message} with the tone: ${tone}`
+    // const query = req.query;
+    // console.log(query)
+    textComplete(prompt).then(result => {
         res.send(result)
     })
 
-    console.log(completedText)
-    res.send(completedText)
+    // console.log(completedText)
+    // res.send(completedText)
 })
 
 app.post('/upload-messages/', (req, res) => {
