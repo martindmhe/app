@@ -18,6 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(auth(config));
+app.use(express.json());
 
 const openai = new OpenAI({
     apiKey: "REMOVED API KEY FOR COMMIT"
