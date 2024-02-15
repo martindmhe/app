@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {

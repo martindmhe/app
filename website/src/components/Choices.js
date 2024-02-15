@@ -31,7 +31,7 @@ const generateMessage = () => {
   return (
     <>
     <div className="Choice_container">
-    <div class="search">
+    <div className="search">
         <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
         <button type="submit" onClick={generateMessage}>Go</button>
       </div>
@@ -39,25 +39,25 @@ const generateMessage = () => {
 
       <div className="wrapper">
         <div className="option">
-          <input className="input" type="radio" name="btn" value="Neutral" checked={selectedOption === "Neutral"} onClick={onValueChange} defaultChecked></input>
+          <input className="input" type="radio" name="btn" value="Neutral" onClick={onValueChange} defaultChecked></input>
           <div className="btn">
             <span className="span">Neutral</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" checked={selectedOption === "Professional"} onClick={onValueChange} value="Professional"></input>
+          <input className="input" type="radio" name="btn" onClick={onValueChange} value="Professional"></input>
           <div className="btn">
             <span className="span">Professional</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" checked={selectedOption === "Apologetic"} onClick={onValueChange}value="Apologetic"></input>
+          <input className="input" type="radio" name="btn" onClick={onValueChange}value="Apologetic"></input>
           <div className="btn">
             <span className="span">Apologetic</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" checked={selectedOption === "Excited"} onClick={onValueChange} value="Excited"></input>
+          <input className="input" type="radio" name="btn" onClick={onValueChange} value="Excited"></input>
           <div className="btn">
             <span className="span">Excited</span>
           </div>
