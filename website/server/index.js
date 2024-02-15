@@ -21,7 +21,7 @@ app.use(auth(config));
 app.use(express.json());
 
 const openai = new OpenAI({
-    apiKey: "REMOVED API KEY FOR COMMIT"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {
@@ -32,7 +32,6 @@ async function textComplete(prompt) {
   
     return(completion.choices[0].message.content);
 }
-
 
 app.use(express.json());
 
@@ -53,7 +52,7 @@ app.get('/profile', requiresAuth(), (req, res) => {
 //     console.log("Hi")
 // })
 
-let testPrompt = "What chatgpt model am i using?"
+let testPrompt = "Whats your fav animal?"
 
 app.get('/test-openai/', (req, res) => {
     
@@ -61,8 +60,8 @@ app.get('/test-openai/', (req, res) => {
         res.send(result)
     })
 
-    // console.log(completedText)
-    // res.send(completedText)
+    console.log(completedText)
+    res.send(completedText)
 })
 
 
