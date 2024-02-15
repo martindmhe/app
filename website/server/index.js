@@ -11,7 +11,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://127.0.0.1:3000',
+  baseURL: 'http://localhost:3000/',
   clientID: 'HEzUXt66pZ04QPkb7XbUkZguPwdWeV6N',
   issuerBaseURL: 'https://dev-irin453gbbxioje0.us.auth0.com'
 };
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 });
 
 async function textComplete(prompt) {
