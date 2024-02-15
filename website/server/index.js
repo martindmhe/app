@@ -1,8 +1,10 @@
 const OpenAI = require('openai');
 const express = require('express');
+const cors = require('cors');
 
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
+
 
 
 const config = {
@@ -19,6 +21,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(auth(config));
 app.use(express.json());
+app.use(cors());
 
 const openai = new OpenAI({
     apiKey: "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"
@@ -55,7 +58,7 @@ app.get('/profile', requiresAuth(), (req, res) => {
 let testPrompt = "Whats your fav animal?"
 
 app.get('/test-openai/', (req, res) => {
-    
+    console.log('working')
     textComplete(testPrompt).then(result => {
         res.send(result)
     })
