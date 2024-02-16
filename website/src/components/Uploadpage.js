@@ -65,7 +65,7 @@ function Uploadpage() {
             </svg>
           </div>
           <div class="text">
-            {uploadedFile? <span>{uploadedFile}</span> : <span>Click to upload your message data</span>}
+            {uploadedFile? <span>{uploadedFile.name}</span> : <span>Click to upload your message data</span>}
           </div>
           <input type="file" id="file" accept=".json" onChange={handleFileChange}></input>
         </label>
