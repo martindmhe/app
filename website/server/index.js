@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "REMOVED API KEY FOR COMMIT"
 });
 
 async function textComplete(prompt) {

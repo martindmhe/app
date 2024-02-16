@@ -12,7 +12,8 @@ import {
 function Choices() {
 const [selectedOption, setSelectedOption] = useState("Neutral")  
 const [inputText, setInputText] = useState("No Input")  
-const [generatedMessage, setGeneratedMessage] = useState("")
+const [generatedMessage, setGeneratedMessage] = useState("Neutral")
+const [inputTone, setInputTone] = useState("")
 
 const onValueChange = e => {
     setSelectedOption(e.target.value)
@@ -33,7 +34,7 @@ const generateMessage = (inputText) => {
   // const messageInformation = createMessageInformation(inputText, testTone);
   // const messageInformationString = messageInformation.toString();
   // let temp = `How should I respond to ${inputText}`
-  fetch(`http://127.0.0.1:3000/test-openai?data=${encodeURIComponent(JSON.stringify({message: inputText, tone: testTone}))}`)
+  fetch(`http://127.0.0.1:3000/test-openai?data=${encodeURIComponent(JSON.stringify({message: inputText, tone: inputTone}))}`)
   .then(res => res.text())
   .then(data => setGeneratedMessage(data))
   .catch(error => console.log(error))
@@ -42,9 +43,13 @@ const generateMessage = (inputText) => {
   return (
     <>
     <div className="Choice_container">
+      <label htmlFor="tone">Input tone (for testing)</label>
+      <input id="tone" placeholder="Enter a tone (temp for testing)" type="text" onChange={(e) => setInputTone(e.target.value)}/>
+      
     <div className="search">
         <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
         <button type="submit" onClick={() => generateMessage(inputText)}>Go</button>
+        
       </div>
 
 
