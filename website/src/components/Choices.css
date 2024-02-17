@@ -167,3 +167,18 @@
   .speakericons{
     height: 50px;
   }
+
+  .copy{
+    margin-right: 7px;
+    margin-top: 10px;
+    margin-left: 0px;
+    color: #bf99b8;
+    height: 1.5em;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  
+  .copy:hover{
+    transform: scale(1.1);
+    color: #a25e94;
+  }

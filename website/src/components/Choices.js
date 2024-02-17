@@ -6,7 +6,8 @@ import {
   faFaceGrinStars,
   faFaceSadTear,
   faFaceSmile,
-  faFaceKissWinkHeart
+  faFaceKissWinkHeart,
+  faCopy
 } from "@fortawesome/free-solid-svg-icons";
 
 function Choices() {
@@ -114,6 +115,7 @@ const generateMessage = (inputText) => {
         <div className="speaker2">
         <div className="generatedMessage" style={{backgroundColor: '#ebd5e7', whiteSpace: 'pre-wrap', overflowWrap: 'break-word', borderBottomLeftRadius: '20px'}}>
             <p>{generatedMessage}</p> 
+            {generatedMessage == "Ready to craft the perfect response... "? <></>:<FontAwesomeIcon icon={faCopy} className="copy" onClick={() => copyToClipboard(generatedMessage)} />}
         </div>
 
         {selectedOption === "Neutral" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceMeh} />}
@@ -121,10 +123,10 @@ const generateMessage = (inputText) => {
         {selectedOption === "Excited" && <FontAwesomeIcon className="speakericons"  style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceGrinStars} />}
         {selectedOption === "Apologetic" && <FontAwesomeIcon className="speakericons" style={{ color: "#a3799c", marginRight: '30px'}} icon={faFaceSadTear} />}
         </div>
-
+      {/* <center>
+        {generatedMessage == "Ready to craft the perfect response... "? <></>:<><button className="copy" onClick={() => copyToClipboard(generatedMessage)}>Copy Response</button></>}
+        </center> */}
       </div>
-      {/* //copy button will fix later */}
-      <button onClick={() => copyToClipboard(generatedMessage)}>hiii</button>
       
       </div>
     </>

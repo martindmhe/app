@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "removed"
+    apiKey: "api key"
 });
 
 async function textComplete(prompt) {
@@ -132,7 +132,7 @@ app.get('/test-openai', (req, res) => {
     console.log(data);
     const { message, tone, length } = data;
     
-    const prompt = `Write a response to the message: ${message} in the tone: ${tone}. ${length} answer please.`
+    const prompt = `Pretend you are a human. Write a response to the message: ${message} in the tone: ${tone}. ${length} answer please.`
 
     textComplete(prompt).then(result => {
         res.send(result)
