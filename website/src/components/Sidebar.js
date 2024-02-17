@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <h2>Logo</h2> {/* Replace with your logo */}
+        <h2>Attext</h2> {/* Replace with your logo */}
       </div>
       <ul className="sidebar-nav">
         <Link to="/" className="nav-links">

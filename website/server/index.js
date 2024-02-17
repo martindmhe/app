@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 const openai = new OpenAI({
-    apiKey: "REMOVED API KEY FOR COMMIT"
+    apiKey: "removed"
 });
 
 async function textComplete(prompt) {
@@ -130,17 +130,14 @@ console.log(typeof(file))
 app.get('/test-openai', (req, res) => {
     const data = JSON.parse(decodeURIComponent(req.query.data));
     console.log(data);
-    const { message, tone } = data;
+    const { message, tone, length } = data;
     
-    const prompt = `Write a response to the message: ${message} with the tone: ${tone}`
-
+    const prompt = `Write a response to the message: ${message} in the tone: ${tone}. ${length} answer please.`
 
     textComplete(prompt).then(result => {
         res.send(result)
     })
 
-    // console.log(completedText)
-    // res.send(completedText)
 })
 
 app.post('/upload-messages/', (req, res) => {

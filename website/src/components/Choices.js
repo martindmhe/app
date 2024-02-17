@@ -12,29 +12,31 @@ import {
 function Choices() {
 const [selectedOption, setSelectedOption] = useState("Neutral")  
 const [inputText, setInputText] = useState("No Input")  
-const [generatedMessage, setGeneratedMessage] = useState("Neutral")
-const [inputTone, setInputTone] = useState("")
+const [textLength, setLength] = useState("Short")  
+const [generatedMessage, setGeneratedMessage] = useState("Ready to craft the perfect response... ")
 
 const onValueChange = e => {
     setSelectedOption(e.target.value)
+}
+
+const onLengthChange = e => {
+  setLength(e.target.value)
 }
 
 const getInput = e => {
     setInputText(e.target.value)
 }
 
-function createMessageInformation(prompt, tone) {
-
-  return { prompt, tone };
-}
+const copyToClipboard = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (error) {
+    alert('Error copying to clipboard');
+  }
+};
 
 const generateMessage = (inputText) => {
-
-  const testTone = "Joyful";
-  // const messageInformation = createMessageInformation(inputText, testTone);
-  // const messageInformationString = messageInformation.toString();
-  // let temp = `How should I respond to ${inputText}`
-  fetch(`http://127.0.0.1:3000/test-openai?data=${encodeURIComponent(JSON.stringify({message: inputText, tone: inputTone}))}`)
+  fetch(`http://127.0.0.1:3000/test-openai?data=${encodeURIComponent(JSON.stringify({message: inputText, tone: selectedOption, length: textLength}))}`)
   .then(res => res.text())
   .then(data => setGeneratedMessage(data))
   .catch(error => console.log(error))
@@ -43,8 +45,6 @@ const generateMessage = (inputText) => {
   return (
     <>
     <div className="Choice_container">
-      <label htmlFor="tone">Input tone (for testing)</label>
-      <input id="tone" placeholder="Enter a tone (temp for testing)" type="text" onChange={(e) => setInputTone(e.target.value)}/>
       
     <div className="search">
         <input placeholder="Enter the text you are responding to..." type="text" onChange={getInput}></input>
@@ -53,32 +53,54 @@ const generateMessage = (inputText) => {
       </div>
 
 
-      <div className="wrapper">
+      <div className="wrapper" style={{width: "40vw"}}>
         <div className="option">
-          <input className="input" type="radio" name="btn" value="Neutral" onClick={onValueChange} defaultChecked></input>
+          <input className="input" type="radio" name="tone" value="Neutral" onClick={onValueChange} defaultChecked></input>
           <div className="btn">
             <span className="span">Neutral</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" onClick={onValueChange} value="Professional"></input>
+          <input className="input" type="radio" name="tone" onClick={onValueChange} value="Professional"></input>
           <div className="btn">
             <span className="span">Professional</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" onClick={onValueChange}value="Apologetic"></input>
+          <input className="input" type="radio" name="tone" onClick={onValueChange}value="Apologetic"></input>
           <div className="btn">
             <span className="span">Apologetic</span>
           </div>
         </div>
         <div className="option">
-          <input className="input" type="radio" name="btn" onClick={onValueChange} value="Excited"></input>
+          <input className="input" type="radio" name="tone" onClick={onValueChange} value="Excited"></input>
           <div className="btn">
             <span className="span">Excited</span>
           </div>
         </div>
       </div>
+
+      <div className="wrapper" style={{width: "20vw"}}>
+        <div className="option">
+          <input className="input" type="radio" name="length" value="short" onClick={onLengthChange} defaultChecked></input>
+          <div className="btn">
+            <span className="span">Short</span>
+          </div>
+        </div>
+        <div className="option">
+          <input className="input" type="radio" name="length" onClick={onLengthChange} value="medium"></input>
+          <div className="btn">
+            <span className="span">Medium</span>
+          </div>
+        </div>
+        <div className="option">
+          <input className="input" type="radio" name="length" onClick={onLengthChange}value="long"></input>
+          <div className="btn">
+            <span className="span">Long</span>
+          </div>
+        </div>
+      </div>
+
       <br></br>
       <div className ="output">
         <br></br>
@@ -101,7 +123,8 @@ const generateMessage = (inputText) => {
         </div>
 
       </div>
-
+      {/* //copy button will fix later */}
+      <button onClick={() => copyToClipboard(generatedMessage)}>hiii</button>
       
       </div>
     </>
